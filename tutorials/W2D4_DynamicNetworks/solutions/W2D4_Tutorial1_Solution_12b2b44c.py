@@ -18,6 +18,6 @@ pars = default_pars_single(w=5, I_ext=.5)
 r_guess_vector = [0, .4, .9]
 x_fp = my_fp_finder(pars, r_guess_vector)
 
-for fp in x_fp:
+for i, fp in enumerate(x_fp):
   eig_fp = eig_single(fp, **pars)
-  print(f'Fixed point1 at {fp:.3f} with Eigenvalue={eig_fp:.3f}')
+  print(f'Fixed point{i+1} at {fp:.3f} with Eigenvalue={eig_fp:.3f}')
